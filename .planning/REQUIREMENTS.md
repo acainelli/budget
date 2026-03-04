@@ -7,18 +7,18 @@
 
 ### Models & Data
 
-- [ ] **DATA-01**: Expense model with amount (Double), category (ExpenseCategory enum), date (Date), notes (String), monthYear (stored String "yyyy-MM")
-- [ ] **DATA-02**: MonthlyBudget model with monthYear (String, unique), income (Double), default income 0
-- [ ] **DATA-03**: 8 expense categories (groceries, restaurants, car, mealVoucher, pharmacy, bills, chico, shopping) with SF Symbols and colors
-- [ ] **DATA-04**: iCloud sync via CloudKit-backed SwiftData
+- [x] **DATA-01**: Expense model with amount (Double), category (ExpenseCategory enum), date (Date), notes (String), monthYear (stored String "yyyy-MM")
+- [x] **DATA-02**: MonthlyBudget model with monthYear (String, unique), income (Double), default income 0
+- [x] **DATA-03**: 8 expense categories (groceries, restaurants, car, mealVoucher, pharmacy, bills, chico, shopping) with SF Symbols and colors
+- [x] **DATA-04**: iCloud sync via CloudKit-backed SwiftData
 - [ ] **DATA-05**: EUR currency formatted as German locale (de_DE, comma decimal: €45,80)
-- [ ] **DATA-06**: Explicit modelContext.save() after all inserts and deletes
+- [x] **DATA-06**: Explicit modelContext.save() after all inserts and deletes
 
 ### App Structure
 
 - [ ] **APP-01**: 4-tab layout: Dashboard (house.fill), Expenses (list.bullet), Insights (chart.bar.xaxis), Settings (gearshape.fill)
 - [ ] **APP-02**: Floating action button (green circle with +) on Dashboard and Expenses tabs to add expense
-- [ ] **APP-03**: Full Xcode project (.xcodeproj) ready to build and run
+- [x] **APP-03**: Full Xcode project (.xcodeproj) ready to build and run
 - [ ] **APP-04**: App icon: black background, green (#004225) dollar sign, 1024x1024
 
 ### Dashboard
@@ -97,15 +97,15 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
-| DATA-04 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
+| DATA-03 | Phase 1 | Complete |
+| DATA-04 | Phase 1 | Complete |
 | DATA-05 | Phase 1 | Pending |
-| DATA-06 | Phase 1 | Pending |
+| DATA-06 | Phase 1 | Complete |
 | APP-01 | Phase 1 | Pending |
 | APP-02 | Phase 1 | Pending |
-| APP-03 | Phase 1 | Pending |
+| APP-03 | Phase 1 | Complete |
 | APP-04 | Phase 1 | Pending |
 | UX-01 | Phase 1 | Pending |
 | UX-02 | Phase 1 | Pending |
