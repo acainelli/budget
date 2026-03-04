@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-04T22:37:55.526Z"
+stopped_at: Completed 03-full-app-02-PLAN.md
+last_updated: "2026-03-04T22:51:04.909Z"
 last_activity: 2026-03-04 — Plan 02 executed (tab shell + FAB + design system + app icon)
 progress:
   total_phases: 3
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 8
+  completed_plans: 5
   percent: 20
 ---
 
@@ -54,6 +54,7 @@ Progress: [##░░░░░░░░] 20%
 | Phase 01-foundation P02 | 7 | 3 tasks | 8 files |
 | Phase 02-core-loop P01 | 3 | 3 tasks | 5 files |
 | Phase 02-core-loop P02 | 8 | 3 tasks | 8 files |
+| Phase 03-full-app P02 | 2 | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,8 @@ Recent decisions affecting current work:
 - [Phase 02-core-loop]: Cents-first numpad uses Binding<Int> amountInCents: *10+digit for single, *100 for double-zero, /10 for backspace, cap 9,999,999
 - [Phase 02-core-loop]: In-memory @Query filtering: fetch all Expense records, filter by yyyy-MM string in view — avoids dynamic predicate issues
 - [Phase 02-core-loop]: showingAddExpense @Binding threaded from ContentView to DashboardView so empty state CTA opens FAB sheet
+- [Phase 03-full-app]: InsightsCalendarView uses showDaySheet Bool + selectedDay Date? to avoid Date Identifiable conformance requirement
+- [Phase 03-full-app]: CalendarWeekView initializes weekStart to Monday of current week using (weekday+5)%7 formula
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T22:37:55.520Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-full-app/03-CONTEXT.md
+Last session: 2026-03-04T22:51:04.906Z
+Stopped at: Completed 03-full-app-02-PLAN.md
+Resume file: None
