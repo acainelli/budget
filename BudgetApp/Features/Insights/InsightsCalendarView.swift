@@ -5,12 +5,17 @@ enum CalendarViewMode: String, CaseIterable {
     case week = "Week"
 }
 
+struct IdentifiableDate: Identifiable {
+    let id: TimeInterval
+    let date: Date
+    init(_ date: Date) { self.date = date; self.id = date.timeIntervalSinceReferenceDate }
+}
+
 struct InsightsCalendarView: View {
     let expenses: [Expense]
     let currentMonth: Date
 
-    @State private var selectedDay: Date? = nil
-    @State private var showDaySheet = false
+    @State private var selectedDay: IdentifiableDate? = nil
     @State private var viewMode: CalendarViewMode = .month
 
     private let weekdaySymbols = ["M", "T", "W", "T", "F", "S", "S"]
@@ -78,10 +83,8 @@ struct InsightsCalendarView: View {
 
             Spacer()
         }
-        .sheet(isPresented: $showDaySheet) {
-            if let day = selectedDay {
-                DayExpensesSheet(day: day, expenses: expensesForDay(day))
-            }
+        .sheet(item: $selectedDay) { item in
+            DayExpensesSheet(day: item.date, expenses: expensesForDay(item.date))
         }
     }
 
@@ -114,8 +117,7 @@ struct InsightsCalendarView: View {
                                 accentOpacity: opacity(for: date)
                             )
                             .onTapGesture {
-                                selectedDay = date
-                                showDaySheet = true
+                                selectedDay = IdentifiableDate(date)
                                 HapticManager.selection()
                             }
                         }
