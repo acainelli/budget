@@ -6,22 +6,13 @@ struct BudgetAppApp: App {
     let container: ModelContainer
 
     init() {
+        // Use local-only storage during development.
+        // Switch to CloudKit when you have a real bundle ID and provisioning profile:
+        //   let config = ModelConfiguration(cloudKitDatabase: .private("iCloud.com.YOUR_BUNDLE_ID"))
         do {
-            let config = ModelConfiguration(
-                cloudKitDatabase: .private("iCloud.com.placeholder.BudgetApp")
-            )
-            container = try ModelContainer(
-                for: Expense.self, MonthlyBudget.self,
-                configurations: config
-            )
+            container = try ModelContainer(for: Expense.self, MonthlyBudget.self)
         } catch {
-            // CloudKit unavailable (simulator without signed entitlements, or placeholder bundle ID).
-            // Fall back to local-only storage so the app runs during development.
-            do {
-                container = try ModelContainer(for: Expense.self, MonthlyBudget.self)
-            } catch {
-                fatalError("Failed to create ModelContainer: \(error)")
-            }
+            fatalError("Failed to create ModelContainer: \(error)")
         }
     }
 
