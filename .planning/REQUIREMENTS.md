@@ -23,12 +23,12 @@
 
 ### Dashboard
 
-- [ ] **DASH-01**: Month picker with left/right chevrons and swipe left/right gesture to change month
-- [ ] **DASH-02**: MonthlySummaryCard showing Income → Total Spent → Net Saved with progress bar (% budget used)
-- [ ] **DASH-03**: If income is 0, show "Not set" and hide the progress bar
-- [ ] **DASH-04**: CategoryBreakdownCard with donut chart of spending by category
-- [ ] **DASH-05**: DailySpendingCard with bar chart of daily spending for the month
-- [ ] **DASH-06**: Empty state when no expenses exist for selected month
+- [x] **DASH-01**: Month picker with left/right chevrons and swipe left/right gesture to change month
+- [x] **DASH-02**: MonthlySummaryCard showing Income → Total Spent → Net Saved with progress bar (% budget used)
+- [x] **DASH-03**: If income is 0, show "Not set" and hide the progress bar
+- [x] **DASH-04**: CategoryBreakdownCard with donut chart of spending by category
+- [x] **DASH-05**: DailySpendingCard with bar chart of daily spending for the month
+- [x] **DASH-06**: Empty state when no expenses exist for selected month
 
 ### Expenses
 
@@ -117,12 +117,12 @@
 | ADD-02 | Phase 2 | Complete |
 | ADD-03 | Phase 2 | Complete |
 | ADD-04 | Phase 2 | Complete |
-| DASH-01 | Phase 2 | Pending |
-| DASH-02 | Phase 2 | Pending |
-| DASH-03 | Phase 2 | Pending |
-| DASH-04 | Phase 2 | Pending |
-| DASH-05 | Phase 2 | Pending |
-| DASH-06 | Phase 2 | Pending |
+| DASH-01 | Phase 2 | Complete |
+| DASH-02 | Phase 2 | Complete |
+| DASH-03 | Phase 2 | Complete |
+| DASH-04 | Phase 2 | Complete |
+| DASH-05 | Phase 2 | Complete |
+| DASH-06 | Phase 2 | Complete |
 | EXP-01 | Phase 3 | Pending |
 | EXP-02 | Phase 3 | Pending |
 | EXP-03 | Phase 3 | Pending |

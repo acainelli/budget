@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 02-core-loop 02-01-PLAN.md
-last_updated: "2026-03-04T22:24:27.363Z"
+stopped_at: Completed 02-core-loop 02-02-PLAN.md
+last_updated: "2026-03-04T22:28:07.216Z"
 last_activity: 2026-03-04 — Plan 02 executed (tab shell + FAB + design system + app icon)
 progress:
   total_phases: 3
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
   percent: 20
 ---
 
@@ -53,6 +53,7 @@ Progress: [##░░░░░░░░] 20%
 | Phase 01-foundation P01 | 17 | 3 tasks | 24 files |
 | Phase 01-foundation P02 | 7 | 3 tasks | 8 files |
 | Phase 02-core-loop P01 | 3 | 3 tasks | 5 files |
+| Phase 02-core-loop P02 | 8 | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation P02]: Swift CoreText requires explicit import for CT* symbols in command-line scripts
 - [Phase 02-core-loop]: pbxproj updated in Task 3 for all three new subview files — unique GUIDs in 0x30-0x32 file ref range
 - [Phase 02-core-loop]: Cents-first numpad uses Binding<Int> amountInCents: *10+digit for single, *100 for double-zero, /10 for backspace, cap 9,999,999
+- [Phase 02-core-loop]: In-memory @Query filtering: fetch all Expense records, filter by yyyy-MM string in view — avoids dynamic predicate issues
+- [Phase 02-core-loop]: showingAddExpense @Binding threaded from ContentView to DashboardView so empty state CTA opens FAB sheet
 
 ### Pending Todos
 
@@ -84,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T22:24:27.361Z
-Stopped at: Completed 02-core-loop 02-01-PLAN.md
+Last session: 2026-03-04T22:28:07.214Z
+Stopped at: Completed 02-core-loop 02-02-PLAN.md
 Resume file: None

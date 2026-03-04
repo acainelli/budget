@@ -13,7 +13,7 @@ Three phases deliver the app from nothing to a fully functional iOS budget track
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Data models, CloudKit sync, Xcode project scaffolding, and the visual design system (completed 2026-03-04)
-- [ ] **Phase 2: Core Loop** - Add Expense sheet and Dashboard tab delivering the primary "log and check budget" workflow
+- [x] **Phase 2: Core Loop** - Add Expense sheet and Dashboard tab delivering the primary "log and check budget" workflow (completed 2026-03-04)
 - [ ] **Phase 3: Full App** - Expenses tab, Insights tab, and Settings tab completing the four-tab experience
 
 ## Phase Details
@@ -70,5 +70,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-04 |
-| 2. Core Loop | 1/2 | In Progress|  |
+| 2. Core Loop | 2/2 | Complete   | 2026-03-04 |
 | 3. Full App | 0/TBD | Not started | - |
