@@ -60,7 +60,13 @@ Plans:
   3. The Insights tab shows a pie chart, trend chart, and 6-month comparison in Charts view, and a heat-map calendar with tappable days in Calendar view
   4. The Settings tab lets the user set monthly income; export produces a valid JSON file via ShareLink; import reads a JSON file, skips duplicates, and reports the count added
   5. Delete All Data in Settings removes all expenses and budgets after a confirmation dialog
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Expenses tab: grouped-by-day list with search, ExpenseRowView, ExpenseDetailView (edit date/notes, delete), BulkDeleteSheet (Day/Week/Month scope)
+- [ ] 03-02-PLAN.md — Insights tab: Charts view (pie chart, spending trend, 6-month comparison), Calendar view (heat-map month grid, week view, day detail sheet)
+- [ ] 03-03-PLAN.md — Settings tab: monthly income input, DataManagementView (export JSON via ShareLink, import with dedup, delete all data)
+- [ ] 03-04-PLAN.md — Human verification checkpoint: end-to-end testing of all four tabs on simulator
 
 ## Progress
 
@@ -71,4 +77,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-04 |
 | 2. Core Loop | 2/2 | Complete   | 2026-03-04 |
-| 3. Full App | 0/TBD | Not started | - |
+| 3. Full App | 0/4 | Not started | - |
