@@ -5,22 +5,21 @@ struct ContentView: View {
     @State private var showingAddExpense = false
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            TabView(selection: $selectedTab) {
-                DashboardView()
-                    .tabItem { Label("Dashboard", systemImage: "house.fill") }
-                    .tag(0)
-                ExpensesView()
-                    .tabItem { Label("Expenses", systemImage: "list.bullet") }
-                    .tag(1)
-                InsightsView()
-                    .tabItem { Label("Insights", systemImage: "chart.bar.xaxis") }
-                    .tag(2)
-                SettingsView()
-                    .tabItem { Label("Settings", systemImage: "gearshape.fill") }
-                    .tag(3)
-            }
-
+        TabView(selection: $selectedTab) {
+            DashboardView()
+                .tabItem { Label("Dashboard", systemImage: "house.fill") }
+                .tag(0)
+            ExpensesView()
+                .tabItem { Label("Expenses", systemImage: "list.bullet") }
+                .tag(1)
+            InsightsView()
+                .tabItem { Label("Insights", systemImage: "chart.bar.xaxis") }
+                .tag(2)
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape.fill") }
+                .tag(3)
+        }
+        .overlay(alignment: .bottomTrailing) {
             if selectedTab == 0 || selectedTab == 1 {
                 Button {
                     HapticManager.impact()
