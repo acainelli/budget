@@ -1,34 +1,27 @@
 import SwiftUI
 
-enum AppTab: Int, CaseIterable {
-    case dashboard = 0
-    case expenses = 1
-    case insights = 2
-    case settings = 3
-}
-
 struct ContentView: View {
-    @State private var selectedTab: AppTab = .dashboard
+    @State private var selectedTab: Int = 0
     @State private var showingAddExpense = false
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TabView(selection: $selectedTab) {
-                Tab("Dashboard", systemImage: "house.fill", value: .dashboard) {
-                    DashboardView()
-                }
-                Tab("Expenses", systemImage: "list.bullet", value: .expenses) {
-                    ExpensesView()
-                }
-                Tab("Insights", systemImage: "chart.bar.xaxis", value: .insights) {
-                    InsightsView()
-                }
-                Tab("Settings", systemImage: "gearshape.fill", value: .settings) {
-                    SettingsView()
-                }
+                DashboardView()
+                    .tabItem { Label("Dashboard", systemImage: "house.fill") }
+                    .tag(0)
+                ExpensesView()
+                    .tabItem { Label("Expenses", systemImage: "list.bullet") }
+                    .tag(1)
+                InsightsView()
+                    .tabItem { Label("Insights", systemImage: "chart.bar.xaxis") }
+                    .tag(2)
+                SettingsView()
+                    .tabItem { Label("Settings", systemImage: "gearshape.fill") }
+                    .tag(3)
             }
 
-            if selectedTab == .dashboard || selectedTab == .expenses {
+            if selectedTab == 0 || selectedTab == 1 {
                 Button {
                     HapticManager.impact()
                     showingAddExpense = true
