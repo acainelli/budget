@@ -32,11 +32,11 @@
 
 ### Expenses
 
-- [ ] **EXP-01**: List of all expenses grouped by day with search
-- [ ] **EXP-02**: Each row shows category icon (colored rounded square), category name, notes, amount
-- [ ] **EXP-03**: Tap row → ExpenseDetailView to edit date, notes, and delete
-- [ ] **EXP-04**: Bulk delete feature via sheet with Day/Week/Month scope
-- [ ] **EXP-05**: When editing expense date, monthYear is updated via .onChange
+- [x] **EXP-01**: List of all expenses grouped by day with search
+- [x] **EXP-02**: Each row shows category icon (colored rounded square), category name, notes, amount
+- [x] **EXP-03**: Tap row → ExpenseDetailView to edit date, notes, and delete
+- [x] **EXP-04**: Bulk delete feature via sheet with Day/Week/Month scope
+- [x] **EXP-05**: When editing expense date, monthYear is updated via .onChange
 
 ### Insights
 
@@ -123,11 +123,11 @@
 | DASH-04 | Phase 2 | Complete |
 | DASH-05 | Phase 2 | Complete |
 | DASH-06 | Phase 2 | Complete |
-| EXP-01 | Phase 3 | Pending |
-| EXP-02 | Phase 3 | Pending |
-| EXP-03 | Phase 3 | Pending |
-| EXP-04 | Phase 3 | Pending |
-| EXP-05 | Phase 3 | Pending |
+| EXP-01 | Phase 3 | Complete |
+| EXP-02 | Phase 3 | Complete |
+| EXP-03 | Phase 3 | Complete |
+| EXP-04 | Phase 3 | Complete |
+| EXP-05 | Phase 3 | Complete |
 | INS-01 | Phase 3 | Pending |
 | INS-02 | Phase 3 | Pending |
 | INS-03 | Phase 3 | Pending |
