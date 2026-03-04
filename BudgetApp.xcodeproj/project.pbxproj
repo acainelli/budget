@@ -30,6 +30,7 @@
 		AA000000000000000000114 /* DashboardEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000042 /* DashboardEmptyState.swift */; };
 		AA000000000000000000115 /* CategoryBreakdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000043 /* CategoryBreakdownCard.swift */; };
 		AA000000000000000000116 /* DailySpendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000044 /* DailySpendingCard.swift */; };
+		AA000000000000000000120 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000059 /* DataManagementView.swift */; };
 		AA000000000000000000200 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002C /* BudgetAppTests.swift */; };
 		AA000000000000000000201 /* ExpenseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000025 /* ExpenseModelTests.swift */; };
 		AA000000000000000000202 /* MonthlyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000026 /* MonthlyBudgetTests.swift */; };
@@ -86,6 +87,7 @@
 		AA000000000000000000042 /* DashboardEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEmptyState.swift; sourceTree = "<group>"; };
 		AA000000000000000000043 /* CategoryBreakdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBreakdownCard.swift; sourceTree = "<group>"; };
 		AA000000000000000000044 /* DailySpendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySpendingCard.swift; sourceTree = "<group>"; };
+		AA000000000000000000059 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000000000000000000023 /* SettingsView.swift */,
+				AA000000000000000000059 /* DataManagementView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				AA000000000000000000114 /* DashboardEmptyState.swift in Sources */,
 				AA000000000000000000115 /* CategoryBreakdownCard.swift in Sources */,
 				AA000000000000000000116 /* DailySpendingCard.swift in Sources */,
+				AA000000000000000000120 /* DataManagementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
