@@ -18,11 +18,7 @@ struct BudgetAppApp: App {
             // CloudKit unavailable (simulator without signed entitlements, or placeholder bundle ID).
             // Fall back to local-only storage so the app runs during development.
             do {
-                let localConfig = ModelConfiguration(cloudKitDatabase: .none)
-                container = try ModelContainer(
-                    for: Expense.self, MonthlyBudget.self,
-                    configurations: localConfig
-                )
+                container = try ModelContainer(for: Expense.self, MonthlyBudget.self)
             } catch {
                 fatalError("Failed to create ModelContainer: \(error)")
             }
