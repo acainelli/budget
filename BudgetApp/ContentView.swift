@@ -7,7 +7,7 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
-                DashboardView()
+                DashboardView(showingAddExpense: $showingAddExpense)
                     .tabItem {
                         Label("Dashboard", systemImage: "house.fill")
                     }
