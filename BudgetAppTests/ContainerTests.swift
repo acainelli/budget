@@ -7,18 +7,21 @@ final class ContainerTests: XCTestCase {
     func testContainerInitWithInMemoryConfig() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         XCTAssertNoThrow(
-            try ModelContainer(for: Expense.self, MonthlyBudget.self,
+            try ModelContainer(for: Expense.self, MonthlyBudget.self, BudgetCategory.self,
                                configurations: config)
         )
     }
 
     func testInMemoryContainerCanInsertExpense() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Expense.self, MonthlyBudget.self,
+        let container = try ModelContainer(for: Expense.self, MonthlyBudget.self, BudgetCategory.self,
                                            configurations: config)
         let context = ModelContext(container)
 
-        let expense = Expense(amount: 10.0, category: .groceries, date: Date())
+        let category = BudgetCategory(name: "Groceries", symbol: "cart.fill", colorHex: "#34C759", sortOrder: 0)
+        context.insert(category)
+
+        let expense = Expense(amount: 10.0, category: category, date: Date())
         context.insert(expense)
         try context.save()
 
@@ -29,7 +32,7 @@ final class ContainerTests: XCTestCase {
 
     func testInMemoryContainerCanInsertMonthlyBudget() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Expense.self, MonthlyBudget.self,
+        let container = try ModelContainer(for: Expense.self, MonthlyBudget.self, BudgetCategory.self,
                                            configurations: config)
         let context = ModelContext(container)
 

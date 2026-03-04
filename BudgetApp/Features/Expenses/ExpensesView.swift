@@ -13,7 +13,7 @@ struct ExpensesView: View {
         if searchText.isEmpty { return allExpenses }
         return allExpenses.filter {
             $0.notes.localizedCaseInsensitiveContains(searchText) ||
-            $0.category.displayName.localizedCaseInsensitiveContains(searchText)
+            ($0.category?.name ?? "Uncategorized").localizedCaseInsensitiveContains(searchText)
         }
     }
 

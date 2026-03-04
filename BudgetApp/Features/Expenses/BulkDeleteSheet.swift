@@ -59,7 +59,7 @@ struct BulkDeleteSheet: View {
                         ForEach(expensesToDelete) { expense in
                             HStack(spacing: DesignTokens.Padding.inner) {
                                 CategoryIconView(category: expense.category)
-                                Text(expense.category.displayName)
+                                Text(expense.category?.displayName ?? "Uncategorized")
                                     .font(.caption)
                                 Spacer()
                                 Text(expense.amount.formattedEUR)

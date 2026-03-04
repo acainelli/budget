@@ -9,6 +9,7 @@ struct ExportData: Codable {
     let exportDate: String
     let budgets: [BudgetExport]
     let expenses: [ExpenseExport]
+    var categories: [CategoryExport]?
 }
 
 struct BudgetExport: Codable {
@@ -24,12 +25,21 @@ struct ExpenseExport: Codable {
     let monthYear: String
 }
 
+struct CategoryExport: Codable {
+    let name: String
+    let symbol: String
+    let colorHex: String
+    let sortOrder: Int
+    let isDefault: Bool
+}
+
 // MARK: - DataManagementView
 
 struct DataManagementView: View {
     @Environment(\.modelContext) var modelContext
     @Query var allExpenses: [Expense]
     @Query var allBudgets: [MonthlyBudget]
+    @Query(sort: \BudgetCategory.sortOrder) var allCategories: [BudgetCategory]
 
     @State private var showDeleteConfirmation = false
     @State private var showImporter = false
@@ -45,19 +55,29 @@ struct DataManagementView: View {
         let expenseExports = allExpenses.map {
             ExpenseExport(
                 amount: $0.amount,
-                category: $0.category.rawValue,
+                category: $0.category?.name ?? "Uncategorized",
                 date: isoFormatter.string(from: $0.date),
                 notes: $0.notes,
                 monthYear: $0.monthYear
             )
         }
+        let categoryExports = allCategories.map {
+            CategoryExport(
+                name: $0.name,
+                symbol: $0.symbol,
+                colorHex: $0.colorHex,
+                sortOrder: $0.sortOrder,
+                isDefault: $0.isDefault
+            )
+        }
 
         let dateFormatter = ISO8601DateFormatter()
         let exportPayload = ExportData(
-            version: 1,
+            version: 2,
             exportDate: dateFormatter.string(from: Date()),
             budgets: budgetExports,
-            expenses: expenseExports
+            expenses: expenseExports,
+            categories: categoryExports
         )
 
         let encoder = JSONEncoder()
@@ -102,6 +122,41 @@ struct DataManagementView: View {
             budget.income = budgetExport.income
         }
 
+        // Import categories (v2) or use defaults for v1
+        if let categoryExports = decoded.categories {
+            for catExport in categoryExports {
+                let existing = allCategories.first { $0.name == catExport.name }
+                if existing == nil {
+                    let cat = BudgetCategory(
+                        name: catExport.name,
+                        symbol: catExport.symbol,
+                        colorHex: catExport.colorHex,
+                        sortOrder: catExport.sortOrder,
+                        isDefault: catExport.isDefault
+                    )
+                    modelContext.insert(cat)
+                }
+            }
+            try? modelContext.save()
+        }
+
+        // Refresh category list for linking
+        let catDescriptor = FetchDescriptor<BudgetCategory>()
+        let currentCategories = (try? modelContext.fetch(catDescriptor)) ?? []
+        let categoryByName = Dictionary(uniqueKeysWithValues: currentCategories.map { ($0.name.lowercased(), $0) })
+
+        // Legacy name mapping for v1 imports
+        let legacyNameMap: [String: String] = [
+            "groceries": "groceries",
+            "restaurants": "restaurants",
+            "car": "car",
+            "mealvoucher": "meal voucher",
+            "pharmacy": "pharmacy",
+            "bills": "bills",
+            "chico": "chico",
+            "shopping": "shopping",
+        ]
+
         // Build existing expense signatures for deduplication
         let existingSignatures = Set(allExpenses.map { expense in
             "\(expense.monthYear)-\(Int(expense.amount * 100))-\(expense.notes)"
@@ -119,7 +174,13 @@ struct DataManagementView: View {
             }
 
             let date = isoFormatter.date(from: exp.date) ?? Date()
-            let category = ExpenseCategory(rawValue: exp.category) ?? .groceries
+            let lookupKey: String
+            if decoded.version >= 2 {
+                lookupKey = exp.category.lowercased()
+            } else {
+                lookupKey = legacyNameMap[exp.category] ?? exp.category.lowercased()
+            }
+            let category = categoryByName[lookupKey]
             let expense = Expense(amount: exp.amount, category: category, date: date, notes: exp.notes)
             modelContext.insert(expense)
             addedCount += 1
@@ -140,6 +201,9 @@ struct DataManagementView: View {
         for budget in allBudgets {
             modelContext.delete(budget)
         }
+        for category in allCategories {
+            modelContext.delete(category)
+        }
         try? modelContext.save()
         HapticManager.warning()
     }
@@ -152,7 +216,7 @@ struct DataManagementView: View {
                 ShareLink(item: exportFileURL) {
                     Label("Export Data", systemImage: "square.and.arrow.up")
                 }
-                Text("\(allExpenses.count) expenses, \(allBudgets.count) budgets")
+                Text("\(allExpenses.count) expenses, \(allBudgets.count) budgets, \(allCategories.count) categories")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -190,7 +254,7 @@ struct DataManagementView: View {
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("This will permanently delete all expenses and budgets.")
+            Text("This will permanently delete all expenses, budgets, and categories.")
         }
         .alert("Import Complete", isPresented: $showImportAlert) {
             Button("OK") {}

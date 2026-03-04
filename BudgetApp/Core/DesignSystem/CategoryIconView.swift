@@ -1,16 +1,20 @@
 import SwiftUI
 
 struct CategoryIconView: View {
-    let category: ExpenseCategory
+    let category: BudgetCategory?
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: DesignTokens.CornerRadius.categoryIcon)
-                .fill(category.color.opacity(0.2))
+                .fill(iconColor.opacity(0.2))
                 .frame(width: 36, height: 36)
-            Image(systemName: category.symbol)
+            Image(systemName: category?.symbol ?? "questionmark")
                 .font(.body)
-                .foregroundStyle(category.color)
+                .foregroundStyle(iconColor)
         }
+    }
+
+    private var iconColor: Color {
+        category?.color ?? .gray
     }
 }

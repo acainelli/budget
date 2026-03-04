@@ -6,7 +6,7 @@ struct AddExpenseView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var amountInCents: Int = 0
-    @State private var selectedCategory: ExpenseCategory = .groceries
+    @State private var selectedCategory: BudgetCategory?
     @State private var selectedDate: Date = Date()
     @State private var notes: String = ""
 

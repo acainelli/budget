@@ -43,6 +43,12 @@ struct SettingsView: View {
                     }
                 }
 
+                Section("Categories") {
+                    NavigationLink("Manage Categories") {
+                        ManageCategoriesView()
+                    }
+                }
+
                 Section("Data") {
                     NavigationLink("Data Management") {
                         DataManagementView()

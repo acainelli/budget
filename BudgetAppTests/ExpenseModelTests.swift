@@ -6,7 +6,7 @@ final class ExpenseModelTests: XCTestCase {
 
     func makeContainer() throws -> ModelContainer {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        return try ModelContainer(for: Expense.self, MonthlyBudget.self,
+        return try ModelContainer(for: Expense.self, MonthlyBudget.self, BudgetCategory.self,
                                   configurations: config)
     }
 
@@ -20,7 +20,10 @@ final class ExpenseModelTests: XCTestCase {
         components.day = 15
         let date = Calendar.current.date(from: components)!
 
-        let expense = Expense(amount: 45.8, category: .groceries, date: date)
+        let category = BudgetCategory(name: "Groceries", symbol: "cart.fill", colorHex: "#34C759", sortOrder: 0)
+        context.insert(category)
+
+        let expense = Expense(amount: 45.8, category: category, date: date)
         context.insert(expense)
         try? context.save()
 
@@ -36,13 +39,16 @@ final class ExpenseModelTests: XCTestCase {
         let container = try makeContainer()
         let context = ModelContext(container)
 
+        let category = BudgetCategory(name: "Restaurants", symbol: "fork.knife", colorHex: "#FF9500", sortOrder: 1)
+        context.insert(category)
+
         let date = Date()
-        let expense = Expense(amount: 99.99, category: .restaurants, date: date, notes: "Dinner")
+        let expense = Expense(amount: 99.99, category: category, date: date, notes: "Dinner")
         context.insert(expense)
         try? context.save()
 
         XCTAssertEqual(expense.amount, 99.99)
-        XCTAssertEqual(expense.category, .restaurants)
+        XCTAssertEqual(expense.category?.name, "Restaurants")
         XCTAssertEqual(expense.notes, "Dinner")
     }
 
@@ -50,10 +56,24 @@ final class ExpenseModelTests: XCTestCase {
         let container = try makeContainer()
         let context = ModelContext(container)
 
-        let expense = Expense(amount: 10.0, category: .bills, date: Date())
+        let category = BudgetCategory(name: "Bills", symbol: "doc.text.fill", colorHex: "#8E8E93", sortOrder: 5)
+        context.insert(category)
+
+        let expense = Expense(amount: 10.0, category: category, date: Date())
         context.insert(expense)
         try? context.save()
 
         XCTAssertEqual(expense.notes, "")
+    }
+
+    func testExpenseWithNilCategory() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        let expense = Expense(amount: 25.0, category: nil, date: Date())
+        context.insert(expense)
+        try? context.save()
+
+        XCTAssertNil(expense.category)
     }
 }

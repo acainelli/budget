@@ -8,7 +8,7 @@ struct ExpenseRowView: View {
             CategoryIconView(category: expense.category)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(expense.category.displayName)
+                Text(expense.category?.displayName ?? "Uncategorized")
                     .font(.subheadline)
                     .fontWeight(.medium)
                 if !expense.notes.isEmpty {

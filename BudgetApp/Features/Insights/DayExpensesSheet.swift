@@ -49,7 +49,7 @@ struct DayExpensesSheet: View {
                                 CategoryIconView(category: expense.category)
 
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text(expense.category.displayName)
+                                    Text(expense.category?.displayName ?? "Uncategorized")
                                         .font(.subheadline.weight(.medium))
                                     if !expense.notes.isEmpty {
                                         Text(expense.notes)

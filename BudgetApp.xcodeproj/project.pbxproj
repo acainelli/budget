@@ -48,6 +48,10 @@
 		AA000000000000000000205 /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000029 /* FormatterTests.swift */; };
 		AA000000000000000000206 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002A /* DesignSystemTests.swift */; };
 		AA000000000000000000207 /* HapticManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002B /* HapticManagerTests.swift */; };
+		AA000000000000000000121 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000005A /* Category.swift */; };
+		AA000000000000000000122 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000005B /* Color+Hex.swift */; };
+		AA000000000000000000123 /* CategoryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000005C /* CategoryFormView.swift */; };
+		AA000000000000000000124 /* ManageCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000005D /* ManageCategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		AA000000000000000000057 /* CalendarWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekView.swift; sourceTree = "<group>"; };
 		AA000000000000000000058 /* DayExpensesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExpensesSheet.swift; sourceTree = "<group>"; };
 		AA000000000000000000059 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
+		AA00000000000000000005A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		AA00000000000000000005B /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		AA00000000000000000005C /* CategoryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormView.swift; sourceTree = "<group>"; };
+		AA00000000000000000005D /* ManageCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +181,7 @@
 			children = (
 				AA000000000000000000019 /* Expense.swift */,
 				AA00000000000000000001A /* MonthlyBudget.swift */,
+				AA00000000000000000005A /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				AA00000000000000000001B /* NumberFormatter+Currency.swift */,
+				AA00000000000000000005B /* Color+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +261,8 @@
 			children = (
 				AA000000000000000000023 /* SettingsView.swift */,
 				AA000000000000000000059 /* DataManagementView.swift */,
+				AA00000000000000000005C /* CategoryFormView.swift */,
+				AA00000000000000000005D /* ManageCategoriesView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -404,6 +416,10 @@
 				AA00000000000000000011E /* CalendarWeekView.swift in Sources */,
 				AA00000000000000000011F /* DayExpensesSheet.swift in Sources */,
 				AA000000000000000000120 /* DataManagementView.swift in Sources */,
+				AA000000000000000000121 /* Category.swift in Sources */,
+				AA000000000000000000122 /* Color+Hex.swift in Sources */,
+				AA000000000000000000123 /* CategoryFormView.swift in Sources */,
+				AA000000000000000000124 /* ManageCategoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

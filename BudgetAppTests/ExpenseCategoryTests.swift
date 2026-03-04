@@ -3,46 +3,84 @@ import SwiftData
 import SwiftUI
 @testable import BudgetApp
 
-final class ExpenseCategoryTests: XCTestCase {
+final class CategoryTests: XCTestCase {
 
-    func testAllCasesExist() {
-        XCTAssertEqual(ExpenseCategory.allCases.count, 8)
+    func makeContainer() throws -> ModelContainer {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        return try ModelContainer(for: Expense.self, MonthlyBudget.self, BudgetCategory.self,
+                                  configurations: config)
     }
 
-    func testAllCategoriesHaveSymbol() {
-        for category in ExpenseCategory.allCases {
+    func testSeedDefaultsCreates8Categories() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        BudgetCategory.seedDefaults(in: context)
+
+        let descriptor = FetchDescriptor<BudgetCategory>()
+        let categories = try context.fetch(descriptor)
+        XCTAssertEqual(categories.count, 8)
+    }
+
+    func testSeedDefaultsIsIdempotent() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        BudgetCategory.seedDefaults(in: context)
+        BudgetCategory.seedDefaults(in: context)
+
+        let descriptor = FetchDescriptor<BudgetCategory>()
+        let categories = try context.fetch(descriptor)
+        XCTAssertEqual(categories.count, 8)
+    }
+
+    func testAllDefaultCategoriesHaveSymbol() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        BudgetCategory.seedDefaults(in: context)
+
+        let descriptor = FetchDescriptor<BudgetCategory>()
+        let categories = try context.fetch(descriptor)
+        for category in categories {
             XCTAssertFalse(category.symbol.isEmpty,
-                           "Category \(category.rawValue) has empty symbol")
+                           "Category \(category.name) has empty symbol")
         }
     }
 
-    func testAllCategoriesHaveColor() {
-        for category in ExpenseCategory.allCases {
-            // Color should not be clear (a sentinel "no color")
-            XCTAssertNotEqual(category.color, Color.clear,
-                              "Category \(category.rawValue) has no valid color")
+    func testAllDefaultCategoriesHaveColor() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        BudgetCategory.seedDefaults(in: context)
+
+        let descriptor = FetchDescriptor<BudgetCategory>()
+        let categories = try context.fetch(descriptor)
+        for category in categories {
+            XCTAssertFalse(category.colorHex.isEmpty,
+                           "Category \(category.name) has empty colorHex")
         }
     }
 
-    func testExpectedCasesExist() {
-        let expected: [ExpenseCategory] = [
-            .groceries, .restaurants, .car, .mealVoucher,
-            .pharmacy, .bills, .chico, .shopping
-        ]
-        for category in expected {
-            XCTAssertTrue(ExpenseCategory.allCases.contains(category),
-                          "Missing category: \(category.rawValue)")
+    func testExpectedDefaultNamesExist() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        BudgetCategory.seedDefaults(in: context)
+
+        let descriptor = FetchDescriptor<BudgetCategory>()
+        let categories = try context.fetch(descriptor)
+        let names = Set(categories.map { $0.name })
+
+        let expected = ["Groceries", "Restaurants", "Car", "Meal Voucher",
+                        "Pharmacy", "Bills", "Chico", "Shopping"]
+        for name in expected {
+            XCTAssertTrue(names.contains(name), "Missing category: \(name)")
         }
     }
 
-    func testSpecificSymbols() {
-        XCTAssertEqual(ExpenseCategory.groceries.symbol, "cart.fill")
-        XCTAssertEqual(ExpenseCategory.restaurants.symbol, "fork.knife")
-        XCTAssertEqual(ExpenseCategory.car.symbol, "car.fill")
-        XCTAssertEqual(ExpenseCategory.mealVoucher.symbol, "creditcard.fill")
-        XCTAssertEqual(ExpenseCategory.pharmacy.symbol, "cross.case.fill")
-        XCTAssertEqual(ExpenseCategory.bills.symbol, "doc.text.fill")
-        XCTAssertEqual(ExpenseCategory.chico.symbol, "teddybear.fill")
-        XCTAssertEqual(ExpenseCategory.shopping.symbol, "bag.fill")
+    func testCategoryProperties() throws {
+        let category = BudgetCategory(name: "Test", symbol: "star.fill", colorHex: "#FF0000", sortOrder: 0)
+        XCTAssertEqual(category.name, "Test")
+        XCTAssertEqual(category.symbol, "star.fill")
+        XCTAssertEqual(category.colorHex, "#FF0000")
+        XCTAssertEqual(category.displayName, "Test")
     }
 }

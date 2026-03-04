@@ -7,18 +7,20 @@ struct InsightsChartsView: View {
     let currentMonth: Date
 
     private struct CategoryTotal: Identifiable {
-        let id = UUID()
-        let category: ExpenseCategory
+        let id: String
+        let name: String
+        let color: Color
         let total: Double
     }
 
     private var categoryTotals: [CategoryTotal] {
-        let grouped = Dictionary(grouping: expenses, by: \.category)
+        let grouped = Dictionary(grouping: expenses) { $0.category?.name ?? "Uncategorized" }
         return grouped
-            .compactMap { key, items -> CategoryTotal? in
+            .compactMap { name, items -> CategoryTotal? in
                 let total = items.reduce(0) { $0 + $1.amount }
                 guard total > 0 else { return nil }
-                return CategoryTotal(category: key, total: total)
+                let color = items.first?.category?.color ?? .gray
+                return CategoryTotal(id: name, name: name, color: color, total: total)
             }
             .sorted { $0.total > $1.total }
     }
@@ -48,7 +50,7 @@ struct InsightsChartsView: View {
                                     innerRadius: .ratio(0.6),
                                     angularInset: 1.5
                                 )
-                                .foregroundStyle(item.category.color)
+                                .foregroundStyle(item.color)
                             }
                             .frame(height: 250)
 
@@ -65,9 +67,9 @@ struct InsightsChartsView: View {
                             ForEach(categoryTotals) { item in
                                 HStack(spacing: 8) {
                                     Circle()
-                                        .fill(item.category.color)
+                                        .fill(item.color)
                                         .frame(width: 10, height: 10)
-                                    Text(item.category.displayName)
+                                    Text(item.name)
                                         .font(.subheadline)
                                         .foregroundStyle(.secondary)
                                     Spacer()

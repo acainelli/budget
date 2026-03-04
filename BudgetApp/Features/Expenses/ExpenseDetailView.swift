@@ -32,7 +32,7 @@ struct ExpenseDetailView: View {
                         .scaleEffect(2.0)
                         .padding(.top, DesignTokens.Padding.outer)
                         .padding(.bottom, DesignTokens.Padding.inner)
-                    Text(expense.category.displayName)
+                    Text(expense.category?.displayName ?? "Uncategorized")
                         .font(.title2)
                         .fontWeight(.semibold)
                     Text(expense.amount.formattedEUR)
