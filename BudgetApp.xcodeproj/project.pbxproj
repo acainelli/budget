@@ -30,6 +30,12 @@
 		AA000000000000000000114 /* DashboardEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000042 /* DashboardEmptyState.swift */; };
 		AA000000000000000000115 /* CategoryBreakdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000043 /* CategoryBreakdownCard.swift */; };
 		AA000000000000000000116 /* DailySpendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000044 /* DailySpendingCard.swift */; };
+		AA00000000000000000011A /* InsightsChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000053 /* InsightsChartsView.swift */; };
+		AA00000000000000000011B /* SpendingTrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000054 /* SpendingTrendChart.swift */; };
+		AA00000000000000000011C /* MonthlyComparisonChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000055 /* MonthlyComparisonChart.swift */; };
+		AA00000000000000000011D /* InsightsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000056 /* InsightsCalendarView.swift */; };
+		AA00000000000000000011E /* CalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000057 /* CalendarWeekView.swift */; };
+		AA00000000000000000011F /* DayExpensesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000058 /* DayExpensesSheet.swift */; };
 		AA000000000000000000200 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002C /* BudgetAppTests.swift */; };
 		AA000000000000000000201 /* ExpenseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000025 /* ExpenseModelTests.swift */; };
 		AA000000000000000000202 /* MonthlyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000026 /* MonthlyBudgetTests.swift */; };
@@ -86,6 +92,12 @@
 		AA000000000000000000042 /* DashboardEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEmptyState.swift; sourceTree = "<group>"; };
 		AA000000000000000000043 /* CategoryBreakdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBreakdownCard.swift; sourceTree = "<group>"; };
 		AA000000000000000000044 /* DailySpendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySpendingCard.swift; sourceTree = "<group>"; };
+		AA000000000000000000053 /* InsightsChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsChartsView.swift; sourceTree = "<group>"; };
+		AA000000000000000000054 /* SpendingTrendChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTrendChart.swift; sourceTree = "<group>"; };
+		AA000000000000000000055 /* MonthlyComparisonChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyComparisonChart.swift; sourceTree = "<group>"; };
+		AA000000000000000000056 /* InsightsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsCalendarView.swift; sourceTree = "<group>"; };
+		AA000000000000000000057 /* CalendarWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekView.swift; sourceTree = "<group>"; };
+		AA000000000000000000058 /* DayExpensesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExpensesSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +225,12 @@
 			isa = PBXGroup;
 			children = (
 				AA000000000000000000022 /* InsightsView.swift */,
+				AA000000000000000000053 /* InsightsChartsView.swift */,
+				AA000000000000000000054 /* SpendingTrendChart.swift */,
+				AA000000000000000000055 /* MonthlyComparisonChart.swift */,
+				AA000000000000000000056 /* InsightsCalendarView.swift */,
+				AA000000000000000000057 /* CalendarWeekView.swift */,
+				AA000000000000000000058 /* DayExpensesSheet.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -364,6 +382,12 @@
 				AA000000000000000000114 /* DashboardEmptyState.swift in Sources */,
 				AA000000000000000000115 /* CategoryBreakdownCard.swift in Sources */,
 				AA000000000000000000116 /* DailySpendingCard.swift in Sources */,
+				AA00000000000000000011A /* InsightsChartsView.swift in Sources */,
+				AA00000000000000000011B /* SpendingTrendChart.swift in Sources */,
+				AA00000000000000000011C /* MonthlyComparisonChart.swift in Sources */,
+				AA00000000000000000011D /* InsightsCalendarView.swift in Sources */,
+				AA00000000000000000011E /* CalendarWeekView.swift in Sources */,
+				AA00000000000000000011F /* DayExpensesSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
