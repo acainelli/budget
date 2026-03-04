@@ -4,11 +4,11 @@ import SwiftUI
 
 @Model
 final class Expense {
-    var amount: Double
-    var category: ExpenseCategory
-    var date: Date
-    var notes: String
-    var monthYear: String
+    var amount: Double = 0.0
+    var category: ExpenseCategory = ExpenseCategory.groceries
+    var date: Date = Date()
+    var notes: String = ""
+    var monthYear: String = ""
 
     init(amount: Double, category: ExpenseCategory, date: Date, notes: String = "") {
         self.amount = amount

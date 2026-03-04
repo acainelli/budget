@@ -3,8 +3,8 @@ import Foundation
 
 @Model
 final class MonthlyBudget {
-    var monthYear: String
-    var income: Double
+    var monthYear: String = ""
+    var income: Double = 0
 
     init(monthYear: String, income: Double = 0) {
         self.monthYear = monthYear
