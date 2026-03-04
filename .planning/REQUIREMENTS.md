@@ -40,12 +40,12 @@
 
 ### Insights
 
-- [ ] **INS-01**: InsightsView with shared monthYear state and segmented picker: Charts / Calendar
-- [ ] **INS-02**: Charts view: category pie chart, spending trend chart, monthly comparison chart (last 6 months)
-- [ ] **INS-03**: Charts view shows all expenses, no filtering; no own NavigationStack
-- [ ] **INS-04**: Calendar month view: 7-column grid with heat-map opacity based on daily totals
-- [ ] **INS-05**: Calendar month view: tap a day → sheet showing flat list of that day's expenses
-- [ ] **INS-06**: Calendar week view: horizontal 7-day row with navigation
+- [x] **INS-01**: InsightsView with shared monthYear state and segmented picker: Charts / Calendar
+- [x] **INS-02**: Charts view: category pie chart, spending trend chart, monthly comparison chart (last 6 months)
+- [x] **INS-03**: Charts view shows all expenses, no filtering; no own NavigationStack
+- [x] **INS-04**: Calendar month view: 7-column grid with heat-map opacity based on daily totals
+- [x] **INS-05**: Calendar month view: tap a day → sheet showing flat list of that day's expenses
+- [x] **INS-06**: Calendar week view: horizontal 7-day row with navigation
 
 ### Add Expense
 
@@ -128,12 +128,12 @@
 | EXP-03 | Phase 3 | Complete |
 | EXP-04 | Phase 3 | Complete |
 | EXP-05 | Phase 3 | Complete |
-| INS-01 | Phase 3 | Pending |
-| INS-02 | Phase 3 | Pending |
-| INS-03 | Phase 3 | Pending |
-| INS-04 | Phase 3 | Pending |
-| INS-05 | Phase 3 | Pending |
-| INS-06 | Phase 3 | Pending |
+| INS-01 | Phase 3 | Complete |
+| INS-02 | Phase 3 | Complete |
+| INS-03 | Phase 3 | Complete |
+| INS-04 | Phase 3 | Complete |
+| INS-05 | Phase 3 | Complete |
+| INS-06 | Phase 3 | Complete |
 | SET-01 | Phase 3 | Pending |
 | SET-02 | Phase 3 | Pending |
 | SET-03 | Phase 3 | Pending |
