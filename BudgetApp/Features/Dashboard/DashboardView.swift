@@ -4,6 +4,7 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             Text("Dashboard")
+                .font(.largeTitle)
                 .navigationTitle("Dashboard")
         }
     }
