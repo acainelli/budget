@@ -39,6 +39,7 @@
 		AA00000000000000000011D /* InsightsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000056 /* InsightsCalendarView.swift */; };
 		AA00000000000000000011E /* CalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000057 /* CalendarWeekView.swift */; };
 		AA00000000000000000011F /* DayExpensesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000058 /* DayExpensesSheet.swift */; };
+		AA000000000000000000120 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000059 /* DataManagementView.swift */; };
 		AA000000000000000000200 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002C /* BudgetAppTests.swift */; };
 		AA000000000000000000201 /* ExpenseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000025 /* ExpenseModelTests.swift */; };
 		AA000000000000000000202 /* MonthlyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000026 /* MonthlyBudgetTests.swift */; };
@@ -104,6 +105,7 @@
 		AA000000000000000000056 /* InsightsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsCalendarView.swift; sourceTree = "<group>"; };
 		AA000000000000000000057 /* CalendarWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekView.swift; sourceTree = "<group>"; };
 		AA000000000000000000058 /* DayExpensesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExpensesSheet.swift; sourceTree = "<group>"; };
+		AA000000000000000000059 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000000000000000000023 /* SettingsView.swift */,
+				AA000000000000000000059 /* DataManagementView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				AA00000000000000000011D /* InsightsCalendarView.swift in Sources */,
 				AA00000000000000000011E /* CalendarWeekView.swift in Sources */,
 				AA00000000000000000011F /* DayExpensesSheet.swift in Sources */,
+				AA000000000000000000120 /* DataManagementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

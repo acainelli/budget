@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: Completed 03-full-app plans 03-01 and 03-02
+stopped_at: Completed 03-full-app plans 03-01, 03-02, 03-03
 last_updated: "2026-03-04T22:51:04.909Z"
 last_activity: 2026-03-04 — Plan 02 executed (tab shell + FAB + design system + app icon)
 progress:
@@ -56,6 +56,7 @@ Progress: [##░░░░░░░░] 20%
 | Phase 02-core-loop P02 | 8 | 3 tasks | 8 files |
 | Phase 03-full-app P01 | 2 | 2 tasks | 5 files |
 | Phase 03-full-app P02 | 2 | 2 tasks | 8 files |
+| Phase 03-full-app P03 | 8 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,9 @@ Recent decisions affecting current work:
 - [Phase 03-full-app]: BulkDeleteSheet captures expensesToDelete snapshot before loop deletion to avoid mutation-while-iterating
 - [Phase 03-full-app]: InsightsCalendarView uses showDaySheet Bool + selectedDay Date? to avoid Date Identifiable conformance requirement
 - [Phase 03-full-app]: CalendarWeekView initializes weekStart to Monday of current week using (weekday+5)%7 formula
+- [Phase 03-full-app]: ShareLink uses temporary file URL to share typed JSON file with .json extension
+- [Phase 03-full-app]: Income TextField uses comma-to-period normalization for European decimal input
+- [Phase 03-full-app]: Export deduplication signature is monthYear-amountCents-notes to uniquely identify expenses across imports
 
 ### Pending Todos
 
@@ -94,5 +98,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04T22:51:04.906Z
-Stopped at: Completed 03-full-app plans 03-01 and 03-02
+Stopped at: Completed 03-full-app plans 03-01, 03-02, 03-03
 Resume file: None

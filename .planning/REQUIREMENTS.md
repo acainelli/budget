@@ -56,11 +56,11 @@
 
 ### Settings
 
-- [ ] **SET-01**: Monthly income input for current month (creates/updates MonthlyBudget)
-- [ ] **SET-02**: NavigationLink to DataManagementView
-- [ ] **SET-03**: Export all expenses + budgets to JSON via ShareLink with specified format
-- [ ] **SET-04**: Import JSON via .fileImporter, skip duplicates by signature "monthYear-amountCents-notes", show import count
-- [ ] **SET-05**: Delete All Data with confirmation dialog → delete all expenses and budgets
+- [x] **SET-01**: Monthly income input for current month (creates/updates MonthlyBudget)
+- [x] **SET-02**: NavigationLink to DataManagementView
+- [x] **SET-03**: Export all expenses + budgets to JSON via ShareLink with specified format
+- [x] **SET-04**: Import JSON via .fileImporter, skip duplicates by signature "monthYear-amountCents-notes", show import count
+- [x] **SET-05**: Delete All Data with confirmation dialog → delete all expenses and budgets
 
 ### Theme & UX
 
@@ -134,11 +134,11 @@
 | INS-04 | Phase 3 | Complete |
 | INS-05 | Phase 3 | Complete |
 | INS-06 | Phase 3 | Complete |
-| SET-01 | Phase 3 | Pending |
-| SET-02 | Phase 3 | Pending |
-| SET-03 | Phase 3 | Pending |
-| SET-04 | Phase 3 | Pending |
-| SET-05 | Phase 3 | Pending |
+| SET-01 | Phase 3 | Complete |
+| SET-02 | Phase 3 | Complete |
+| SET-03 | Phase 3 | Complete |
+| SET-04 | Phase 3 | Complete |
+| SET-05 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 42 total
