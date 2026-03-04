@@ -70,5 +70,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-04 |
-| 2. Core Loop | 0/2 | In progress | - |
+| 2. Core Loop | 1/2 | In Progress|  |
 | 3. Full App | 0/TBD | Not started | - |

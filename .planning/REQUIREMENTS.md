@@ -49,10 +49,10 @@
 
 ### Add Expense
 
-- [ ] **ADD-01**: Custom numpad (4x3 grid) for amount input
-- [ ] **ADD-02**: Category picker for selecting expense category
-- [ ] **ADD-03**: Date picker for selecting expense date
-- [ ] **ADD-04**: Shows which month the expense will land in
+- [x] **ADD-01**: Custom numpad (4x3 grid) for amount input
+- [x] **ADD-02**: Category picker for selecting expense category
+- [x] **ADD-03**: Date picker for selecting expense date
+- [x] **ADD-04**: Shows which month the expense will land in
 
 ### Settings
 
@@ -113,10 +113,10 @@
 | UX-04 | Phase 1 | Complete |
 | UX-05 | Phase 1 | Complete |
 | UX-06 | Phase 1 | Complete |
-| ADD-01 | Phase 2 | Pending |
-| ADD-02 | Phase 2 | Pending |
-| ADD-03 | Phase 2 | Pending |
-| ADD-04 | Phase 2 | Pending |
+| ADD-01 | Phase 2 | Complete |
+| ADD-02 | Phase 2 | Complete |
+| ADD-03 | Phase 2 | Complete |
+| ADD-04 | Phase 2 | Complete |
 | DASH-01 | Phase 2 | Pending |
 | DASH-02 | Phase 2 | Pending |
 | DASH-03 | Phase 2 | Pending |
