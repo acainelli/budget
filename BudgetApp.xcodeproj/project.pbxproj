@@ -22,6 +22,9 @@
 		AA00000000000000000010C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000023 /* SettingsView.swift */; };
 		AA00000000000000000010D /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000024 /* AddExpenseView.swift */; };
 		AA00000000000000000010E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000014 /* Assets.xcassets */; };
+		AA00000000000000000010F /* NumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000030 /* NumpadView.swift */; };
+		AA000000000000000000110 /* AmountDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000031 /* AmountDisplayView.swift */; };
+		AA000000000000000000111 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000032 /* CategoryPickerView.swift */; };
 		AA000000000000000000200 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002C /* BudgetAppTests.swift */; };
 		AA000000000000000000201 /* ExpenseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000025 /* ExpenseModelTests.swift */; };
 		AA000000000000000000202 /* MonthlyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000026 /* MonthlyBudgetTests.swift */; };
@@ -70,6 +73,9 @@
 		AA00000000000000000002A /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		AA00000000000000000002B /* HapticManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManagerTests.swift; sourceTree = "<group>"; };
 		AA00000000000000000002C /* BudgetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAppTests.swift; sourceTree = "<group>"; };
+		AA000000000000000000030 /* NumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadView.swift; sourceTree = "<group>"; };
+		AA000000000000000000031 /* AmountDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDisplayView.swift; sourceTree = "<group>"; };
+		AA000000000000000000032 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				AA000000000000000000024 /* AddExpenseView.swift */,
+				AA000000000000000000030 /* NumpadView.swift */,
+				AA000000000000000000031 /* AmountDisplayView.swift */,
+				AA000000000000000000032 /* CategoryPickerView.swift */,
 			);
 			path = AddExpense;
 			sourceTree = "<group>";
@@ -332,6 +341,9 @@
 				AA00000000000000000010B /* InsightsView.swift in Sources */,
 				AA00000000000000000010C /* SettingsView.swift in Sources */,
 				AA00000000000000000010D /* AddExpenseView.swift in Sources */,
+				AA00000000000000000010F /* NumpadView.swift in Sources */,
+				AA000000000000000000110 /* AmountDisplayView.swift in Sources */,
+				AA000000000000000000111 /* CategoryPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
