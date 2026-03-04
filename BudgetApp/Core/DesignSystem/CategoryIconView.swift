@@ -5,7 +5,7 @@ struct CategoryIconView: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: DesignTokens.CornerRadius.categoryIcon)
                 .fill(category.color.opacity(0.2))
                 .frame(width: 36, height: 36)
             Image(systemName: category.symbol)
