@@ -28,7 +28,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A test expense can be inserted via Swift code and appears persisted in SwiftData with the correct EUR/de_DE formatted amount
   4. The app runs in dark mode only — no light mode appearance at any point
   5. A .cardStyle() view modifier exists and applies correctly to any wrapped view
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Xcode project skeleton, SwiftData models (Expense, MonthlyBudget, ExpenseCategory), CloudKit entitlements, Wave 0 XCTest stubs
+- [ ] 01-02-PLAN.md — Design system (CardStyle, CategoryIconView), full ContentView tab shell with FAB, placeholder feature views, app icon, human-verify checkpoint
 
 ### Phase 2: Core Loop
 **Goal**: Users can log an expense from any tab and immediately see their monthly budget status on the Dashboard
@@ -61,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Not started | - |
 | 2. Core Loop | 0/TBD | Not started | - |
 | 3. Full App | 0/TBD | Not started | - |
