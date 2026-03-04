@@ -11,15 +11,15 @@
 - [x] **DATA-02**: MonthlyBudget model with monthYear (String, unique), income (Double), default income 0
 - [x] **DATA-03**: 8 expense categories (groceries, restaurants, car, mealVoucher, pharmacy, bills, chico, shopping) with SF Symbols and colors
 - [x] **DATA-04**: iCloud sync via CloudKit-backed SwiftData
-- [ ] **DATA-05**: EUR currency formatted as German locale (de_DE, comma decimal: €45,80)
+- [x] **DATA-05**: EUR currency formatted as German locale (de_DE, comma decimal: €45,80)
 - [x] **DATA-06**: Explicit modelContext.save() after all inserts and deletes
 
 ### App Structure
 
-- [ ] **APP-01**: 4-tab layout: Dashboard (house.fill), Expenses (list.bullet), Insights (chart.bar.xaxis), Settings (gearshape.fill)
-- [ ] **APP-02**: Floating action button (green circle with +) on Dashboard and Expenses tabs to add expense
+- [x] **APP-01**: 4-tab layout: Dashboard (house.fill), Expenses (list.bullet), Insights (chart.bar.xaxis), Settings (gearshape.fill)
+- [x] **APP-02**: Floating action button (green circle with +) on Dashboard and Expenses tabs to add expense
 - [x] **APP-03**: Full Xcode project (.xcodeproj) ready to build and run
-- [ ] **APP-04**: App icon: black background, green (#004225) dollar sign, 1024x1024
+- [x] **APP-04**: App icon: black background, green (#004225) dollar sign, 1024x1024
 
 ### Dashboard
 
@@ -64,12 +64,12 @@
 
 ### Theme & UX
 
-- [ ] **UX-01**: Dark mode only
-- [ ] **UX-02**: Accent color #004225 (dark green) via AccentColor asset
-- [ ] **UX-03**: Shared .cardStyle() view modifier (padding + secondarySystemBackground + corner radius 20)
-- [ ] **UX-04**: Corner radius: 20 (cards), 12 (small elements). Padding: 16 / 8
-- [ ] **UX-05**: Amount font: semibold, rounded, monospaced design
-- [ ] **UX-06**: Haptics: .impact(.medium) taps, .notification(.success) saves, .notification(.warning) deletes, .selection() pickers/navigation
+- [x] **UX-01**: Dark mode only
+- [x] **UX-02**: Accent color #004225 (dark green) via AccentColor asset
+- [x] **UX-03**: Shared .cardStyle() view modifier (padding + secondarySystemBackground + corner radius 20)
+- [x] **UX-04**: Corner radius: 20 (cards), 12 (small elements). Padding: 16 / 8
+- [x] **UX-05**: Amount font: semibold, rounded, monospaced design
+- [x] **UX-06**: Haptics: .impact(.medium) taps, .notification(.success) saves, .notification(.warning) deletes, .selection() pickers/navigation
 
 ## v2 Requirements
 
@@ -101,18 +101,18 @@
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
 | DATA-04 | Phase 1 | Complete |
-| DATA-05 | Phase 1 | Pending |
+| DATA-05 | Phase 1 | Complete |
 | DATA-06 | Phase 1 | Complete |
-| APP-01 | Phase 1 | Pending |
-| APP-02 | Phase 1 | Pending |
+| APP-01 | Phase 1 | Complete |
+| APP-02 | Phase 1 | Complete |
 | APP-03 | Phase 1 | Complete |
-| APP-04 | Phase 1 | Pending |
-| UX-01 | Phase 1 | Pending |
-| UX-02 | Phase 1 | Pending |
-| UX-03 | Phase 1 | Pending |
-| UX-04 | Phase 1 | Pending |
-| UX-05 | Phase 1 | Pending |
-| UX-06 | Phase 1 | Pending |
+| APP-04 | Phase 1 | Complete |
+| UX-01 | Phase 1 | Complete |
+| UX-02 | Phase 1 | Complete |
+| UX-03 | Phase 1 | Complete |
+| UX-04 | Phase 1 | Complete |
+| UX-05 | Phase 1 | Complete |
+| UX-06 | Phase 1 | Complete |
 | ADD-01 | Phase 2 | Pending |
 | ADD-02 | Phase 2 | Pending |
 | ADD-03 | Phase 2 | Pending |
