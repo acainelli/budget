@@ -95,17 +95,56 @@
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Pending |
+| DATA-04 | Phase 1 | Pending |
+| DATA-05 | Phase 1 | Pending |
+| DATA-06 | Phase 1 | Pending |
+| APP-01 | Phase 1 | Pending |
+| APP-02 | Phase 1 | Pending |
+| APP-03 | Phase 1 | Pending |
+| APP-04 | Phase 1 | Pending |
+| UX-01 | Phase 1 | Pending |
+| UX-02 | Phase 1 | Pending |
+| UX-03 | Phase 1 | Pending |
+| UX-04 | Phase 1 | Pending |
+| UX-05 | Phase 1 | Pending |
+| UX-06 | Phase 1 | Pending |
+| ADD-01 | Phase 2 | Pending |
+| ADD-02 | Phase 2 | Pending |
+| ADD-03 | Phase 2 | Pending |
+| ADD-04 | Phase 2 | Pending |
+| DASH-01 | Phase 2 | Pending |
+| DASH-02 | Phase 2 | Pending |
+| DASH-03 | Phase 2 | Pending |
+| DASH-04 | Phase 2 | Pending |
+| DASH-05 | Phase 2 | Pending |
+| DASH-06 | Phase 2 | Pending |
+| EXP-01 | Phase 3 | Pending |
+| EXP-02 | Phase 3 | Pending |
+| EXP-03 | Phase 3 | Pending |
+| EXP-04 | Phase 3 | Pending |
+| EXP-05 | Phase 3 | Pending |
+| INS-01 | Phase 3 | Pending |
+| INS-02 | Phase 3 | Pending |
+| INS-03 | Phase 3 | Pending |
+| INS-04 | Phase 3 | Pending |
+| INS-05 | Phase 3 | Pending |
+| INS-06 | Phase 3 | Pending |
+| SET-01 | Phase 3 | Pending |
+| SET-02 | Phase 3 | Pending |
+| SET-03 | Phase 3 | Pending |
+| SET-04 | Phase 3 | Pending |
+| SET-05 | Phase 3 | Pending |
 
 **Coverage:**
-- v1 requirements: 34 total
-- Mapped to phases: 0
-- Unmapped: 34 ⚠️
+- v1 requirements: 42 total
+- Mapped to phases: 42
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-04*
-*Last updated: 2026-03-04 after initial definition*
+*Last updated: 2026-03-04 after roadmap creation*

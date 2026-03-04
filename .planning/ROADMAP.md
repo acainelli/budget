@@ -1,0 +1,66 @@
+# Roadmap: BudgetApp
+
+## Overview
+
+Three phases deliver the app from nothing to a fully functional iOS budget tracker. Phase 1 builds the foundation: data models, CloudKit sync, Xcode scaffolding, and the visual system. Phase 2 delivers the core user loop — logging an expense and seeing the dashboard reflect it immediately. Phase 3 completes the app by building the remaining three tabs: Expenses list, Insights visualizations, and Settings with data management.
+
+## Phases
+
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+Decimal phases appear between their surrounding integers in numeric order.
+
+- [ ] **Phase 1: Foundation** - Data models, CloudKit sync, Xcode project scaffolding, and the visual design system
+- [ ] **Phase 2: Core Loop** - Add Expense sheet and Dashboard tab delivering the primary "log and check budget" workflow
+- [ ] **Phase 3: Full App** - Expenses tab, Insights tab, and Settings tab completing the four-tab experience
+
+## Phase Details
+
+### Phase 1: Foundation
+**Goal**: A buildable Xcode project exists with all data models, CloudKit sync, and the design system in place — ready to render UI
+**Depends on**: Nothing (first phase)
+**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, DATA-05, DATA-06, APP-01, APP-02, APP-03, APP-04, UX-01, UX-02, UX-03, UX-04, UX-05, UX-06
+**Success Criteria** (what must be TRUE):
+  1. The Xcode project opens, compiles without errors, and runs on an iOS 17+ simulator showing a 4-tab shell
+  2. The app icon appears (black background, green dollar sign) and the accent color is #004225 dark green throughout
+  3. A test expense can be inserted via Swift code and appears persisted in SwiftData with the correct EUR/de_DE formatted amount
+  4. The app runs in dark mode only — no light mode appearance at any point
+  5. A .cardStyle() view modifier exists and applies correctly to any wrapped view
+**Plans**: TBD
+
+### Phase 2: Core Loop
+**Goal**: Users can log an expense from any tab and immediately see their monthly budget status on the Dashboard
+**Depends on**: Phase 1
+**Requirements**: ADD-01, ADD-02, ADD-03, ADD-04, DASH-01, DASH-02, DASH-03, DASH-04, DASH-05, DASH-06
+**Success Criteria** (what must be TRUE):
+  1. Tapping the floating + button opens a sheet with the custom numpad where a user can enter an amount, pick a category, and pick a date
+  2. After saving, the Dashboard immediately reflects the new expense in the MonthlySummaryCard (income, spent, net, progress bar)
+  3. The Dashboard donut chart shows spending broken down by category for the selected month
+  4. The Dashboard bar chart shows daily spending totals for the selected month
+  5. Swiping left/right or tapping chevrons on the month picker changes the displayed month and all cards update accordingly
+**Plans**: TBD
+
+### Phase 3: Full App
+**Goal**: All four tabs are fully functional — users can browse and manage expenses, explore spending insights, and configure settings with export/import
+**Depends on**: Phase 2
+**Requirements**: EXP-01, EXP-02, EXP-03, EXP-04, EXP-05, INS-01, INS-02, INS-03, INS-04, INS-05, INS-06, SET-01, SET-02, SET-03, SET-04, SET-05
+**Success Criteria** (what must be TRUE):
+  1. The Expenses tab shows all expenses grouped by day with a working search bar; tapping a row opens a detail view to edit or delete it
+  2. Bulk delete works — selecting Day, Week, or Month scope removes the matching expenses after confirmation
+  3. The Insights tab shows a pie chart, trend chart, and 6-month comparison in Charts view, and a heat-map calendar with tappable days in Calendar view
+  4. The Settings tab lets the user set monthly income; export produces a valid JSON file via ShareLink; import reads a JSON file, skips duplicates, and reports the count added
+  5. Delete All Data in Settings removes all expenses and budgets after a confirmation dialog
+**Plans**: TBD
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 1 → 2 → 3
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 1. Foundation | 0/TBD | Not started | - |
+| 2. Core Loop | 0/TBD | Not started | - |
+| 3. Full App | 0/TBD | Not started | - |
