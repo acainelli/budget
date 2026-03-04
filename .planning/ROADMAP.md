@@ -31,8 +31,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Xcode project skeleton, SwiftData models (Expense, MonthlyBudget, ExpenseCategory), CloudKit entitlements, Wave 0 XCTest stubs
-- [ ] 01-02-PLAN.md — Design system (CardStyle, CategoryIconView), full ContentView tab shell with FAB, placeholder feature views, app icon, human-verify checkpoint
+- [x] 01-01-PLAN.md — Xcode project skeleton, SwiftData models (Expense, MonthlyBudget, ExpenseCategory), CloudKit entitlements, Wave 0 XCTest stubs
+- [x] 01-02-PLAN.md — Design system (CardStyle, CategoryIconView), full ContentView tab shell with FAB, placeholder feature views, app icon, human-verify checkpoint
 
 ### Phase 2: Core Loop
 **Goal**: Users can log an expense from any tab and immediately see their monthly budget status on the Dashboard
@@ -44,7 +44,11 @@ Plans:
   3. The Dashboard donut chart shows spending broken down by category for the selected month
   4. The Dashboard bar chart shows daily spending totals for the selected month
   5. Swiping left/right or tapping chevrons on the month picker changes the displayed month and all cards update accordingly
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Add Expense sheet: custom numpad (ATM-style cents-first), category picker grid, date picker with month label, save to SwiftData
+- [ ] 02-02-PLAN.md — Dashboard: month picker with swipe, MonthlySummaryCard, CategoryBreakdownCard (donut), DailySpendingCard (bar chart), empty state
 
 ### Phase 3: Full App
 **Goal**: All four tabs are fully functional — users can browse and manage expenses, explore spending insights, and configure settings with export/import
@@ -66,5 +70,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-04 |
-| 2. Core Loop | 0/TBD | Not started | - |
+| 2. Core Loop | 0/2 | In progress | - |
 | 3. Full App | 0/TBD | Not started | - |
