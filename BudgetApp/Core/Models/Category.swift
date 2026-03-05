@@ -10,6 +10,7 @@ final class BudgetCategory {
     var colorHex: String = "#808080"
     var sortOrder: Int = 0
     var isDefault: Bool = false
+    var isHiddenFromStats: Bool = false
 
     @Relationship(deleteRule: .nullify, inverse: \Expense.category)
     var expenses: [Expense] = []

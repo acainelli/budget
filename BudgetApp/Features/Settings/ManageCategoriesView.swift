@@ -12,47 +12,26 @@ struct ManageCategoriesView: View {
     var body: some View {
         List {
             ForEach(categories) { category in
-                Button {
+                CategoryRow(category: category, onEdit: {
                     editingCategory = category
-                } label: {
-                    HStack(spacing: 12) {
-                        CategoryIconView(category: category)
-
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(category.displayName)
-                                .font(.body)
-                                .foregroundStyle(.primary)
-                            if category.isDefault {
-                                Text("Default")
-                                    .font(.caption2)
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-
-                        Spacer()
-
-                        let count = category.expenses.count
-                        if count > 0 {
-                            Text("\(count)")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 2)
-                                .background(Color.secondary.opacity(0.1), in: Capsule())
-                        }
-
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
-                    }
-                }
-                .buttonStyle(.plain)
+                })
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button(role: .destructive) {
                         categoryToDelete = category
                     } label: {
                         Label("Delete", systemImage: "trash")
                     }
+                }
+                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                    Button {
+                        toggleVisibility(category)
+                    } label: {
+                        Label(
+                            category.isHiddenFromStats ? "Show" : "Hide",
+                            systemImage: category.isHiddenFromStats ? "eye" : "eye.slash"
+                        )
+                    }
+                    .tint(category.isHiddenFromStats ? .green : .orange)
                 }
             }
             .onMove { from, to in
@@ -108,10 +87,64 @@ struct ManageCategoriesView: View {
         }
     }
 
+    private func toggleVisibility(_ category: BudgetCategory) {
+        category.isHiddenFromStats.toggle()
+        try? modelContext.save()
+        HapticManager.impact()
+    }
+
     private func deleteCategory(_ category: BudgetCategory) {
         modelContext.delete(category)
         try? modelContext.save()
         HapticManager.warning()
         categoryToDelete = nil
+    }
+}
+
+private struct CategoryRow: View {
+    let category: BudgetCategory
+    let onEdit: () -> Void
+
+    var body: some View {
+        Button(action: onEdit) {
+            HStack(spacing: 12) {
+                CategoryIconView(category: category)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 6) {
+                        Text(category.displayName)
+                            .font(.body)
+                            .foregroundStyle(category.isHiddenFromStats ? .secondary : .primary)
+                        if category.isHiddenFromStats {
+                            Image(systemName: "eye.slash")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    if category.isDefault {
+                        Text("Default")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Spacer()
+
+                let count = category.expenses.count
+                if count > 0 {
+                    Text("\(count)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(Color.secondary.opacity(0.1), in: Capsule())
+                }
+
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .buttonStyle(.plain)
     }
 }

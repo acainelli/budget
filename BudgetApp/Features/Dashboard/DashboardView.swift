@@ -21,7 +21,7 @@ struct DashboardView: View {
     }
 
     private var monthExpenses: [Expense] {
-        allExpenses.filter { $0.monthYear == currentMonthYear }
+        allExpenses.filter { $0.monthYear == currentMonthYear && $0.category?.isHiddenFromStats != true }
     }
 
     private var totalSpent: Double {

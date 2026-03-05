@@ -22,8 +22,12 @@ struct InsightsView: View {
         return formatter.string(from: currentMonth)
     }
 
+    private var visibleExpenses: [Expense] {
+        allExpenses.filter { $0.category?.isHiddenFromStats != true }
+    }
+
     private var monthExpenses: [Expense] {
-        allExpenses.filter { $0.monthYear == currentMonthYear }
+        visibleExpenses.filter { $0.monthYear == currentMonthYear }
     }
 
     var body: some View {
@@ -46,7 +50,7 @@ struct InsightsView: View {
                 case .charts:
                     InsightsChartsView(
                         expenses: monthExpenses,
-                        allExpenses: allExpenses,
+                        allExpenses: visibleExpenses,
                         currentMonth: currentMonth
                     )
                 case .calendar:
