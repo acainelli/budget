@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/acainelli/budget/compare/v1.0.0...v1.1.0) (2026-03-06)
+
+
+### Features
+
+* add category drill-down, payment templates, calendar fix, and settings improvements ([16789ef](https://github.com/acainelli/budget/commit/16789ef29ed52ba7931ad6ddbe36e29ba5ef6430))
+* add category visibility toggle and Siri Intents support ([fb2e993](https://github.com/acainelli/budget/commit/fb2e9930e33207a8c9ad0cc176e815fe31f2c0b2))
+
 ## 1.0.0 (2026-03-05)
 
 
