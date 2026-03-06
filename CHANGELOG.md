@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/acainelli/budget/compare/v1.1.0...v1.2.0) (2026-03-06)
+
+
+### Features
+
+* replace random seed data with realistic ~€2000/month expenses ([b101736](https://github.com/acainelli/budget/commit/b101736afe2470f4758f4240bb79eb1bd0ea07cd))
+* seed ~50 sample expenses across February and March 2026 ([04e32c2](https://github.com/acainelli/budget/commit/04e32c24af7604bd1f4d4b2417a155f729c1f829))
+
 ## [1.1.0](https://github.com/acainelli/budget/compare/v1.0.0...v1.1.0) (2026-03-06)
 
 
