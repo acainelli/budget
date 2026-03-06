@@ -81,7 +81,7 @@ struct CalendarWeekView: View {
                 ForEach(Array(weekDays.enumerated()), id: \.offset) { index, date in
                     let dayTotal = dailyTotals[cal.startOfDay(for: date)] ?? 0
                     let hasExpenses = dayTotal > 0
-                    let opacity = hasExpenses ? max(0.1, dayTotal / maxDailyTotal) : 0
+                    let opacity = hasExpenses ? max(0.15, sqrt(dayTotal / maxDailyTotal)) : 0
 
                     VStack(spacing: 4) {
                         Text(weekdaySymbols[index])

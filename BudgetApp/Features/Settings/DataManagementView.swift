@@ -215,7 +215,14 @@ struct DataManagementView: View {
             Section("Export") {
                 ShareLink(item: exportFileURL) {
                     Label("Export Data", systemImage: "square.and.arrow.up")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor)
+                        .cornerRadius(DesignTokens.CornerRadius.small)
                 }
+                .buttonStyle(.plain)
                 Text("\(allExpenses.count) expenses, \(allBudgets.count) budgets, \(allCategories.count) categories")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -226,7 +233,14 @@ struct DataManagementView: View {
                     showImporter = true
                 } label: {
                     Label("Import Data", systemImage: "square.and.arrow.down")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor)
+                        .cornerRadius(DesignTokens.CornerRadius.small)
                 }
+                .buttonStyle(.plain)
             }
 
             Section(header: Text("Danger Zone").foregroundStyle(.red)) {

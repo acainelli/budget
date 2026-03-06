@@ -56,7 +56,8 @@ struct InsightsCalendarView: View {
         let day = cal.startOfDay(for: date)
         guard let total = dailyTotals[day], total > 0 else { return 0 }
         let ratio = total / maxDailyTotal
-        return max(0.1, ratio)
+        // Use square root to compress the range so low-spend days are still visible
+        return max(0.15, sqrt(ratio))
     }
 
     private func expensesForDay(_ day: Date) -> [Expense] {

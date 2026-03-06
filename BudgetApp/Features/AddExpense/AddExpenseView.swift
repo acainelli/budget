@@ -4,6 +4,7 @@ import SwiftData
 struct AddExpenseView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Query(sort: \PaymentTemplate.sortOrder) private var templates: [PaymentTemplate]
 
     @State private var amountInCents: Int = 0
     @State private var selectedCategory: BudgetCategory?
@@ -31,6 +32,45 @@ struct AddExpenseView: View {
                 // Scrollable bottom section
                 ScrollView {
                     VStack(alignment: .leading, spacing: DesignTokens.Padding.outer) {
+                        // Payment templates
+                        if !templates.isEmpty {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Templates")
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                    .padding(.horizontal, DesignTokens.Padding.outer)
+
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 8) {
+                                        ForEach(templates) { template in
+                                            Button {
+                                                applyTemplate(template)
+                                            } label: {
+                                                HStack(spacing: 6) {
+                                                    if let cat = template.category {
+                                                        Image(systemName: cat.symbol)
+                                                            .font(.caption)
+                                                            .foregroundStyle(cat.color)
+                                                    }
+                                                    Text(template.name)
+                                                        .font(.caption.weight(.medium))
+                                                }
+                                                .padding(.horizontal, 12)
+                                                .padding(.vertical, 8)
+                                                .background(Color(.secondarySystemBackground))
+                                                .cornerRadius(DesignTokens.CornerRadius.small)
+                                            }
+                                            .buttonStyle(.plain)
+                                        }
+                                    }
+                                    .padding(.horizontal, DesignTokens.Padding.outer)
+                                }
+                            }
+
+                            Divider()
+                                .padding(.horizontal, DesignTokens.Padding.outer)
+                        }
+
                         // Category picker
                         Text("Category")
                             .font(.subheadline.weight(.semibold))
@@ -97,6 +137,13 @@ struct AddExpenseView: View {
                 }
             }
         }
+    }
+
+    private func applyTemplate(_ template: PaymentTemplate) {
+        amountInCents = template.amountInCents
+        selectedCategory = template.category
+        notes = template.notes
+        HapticManager.selection()
     }
 
     private func saveExpense() {

@@ -3,6 +3,7 @@ import Charts
 
 struct CategoryBreakdownCard: View {
     let expenses: [Expense]
+    @State private var selectedCategoryName: String? = nil
 
     private struct CategoryTotal: Identifiable {
         let id: String
@@ -63,25 +64,93 @@ struct CategoryBreakdownCard: View {
                 // Legend
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(categoryTotals) { item in
-                        HStack(spacing: 8) {
-                            Circle()
-                                .fill(item.color)
-                                .frame(width: 10, height: 10)
+                        Button {
+                            selectedCategoryName = item.name
+                        } label: {
+                            HStack(spacing: 8) {
+                                Circle()
+                                    .fill(item.color)
+                                    .frame(width: 10, height: 10)
 
-                            Text(item.name)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                                Text(item.name)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
 
-                            Spacer()
+                                Spacer()
 
-                            Text(item.total.formattedEUR)
-                                .font(.subheadline)
-                                .fontWeight(.medium)
+                                Text(item.total.formattedEUR)
+                                    .font(.subheadline)
+                                    .fontWeight(.medium)
+
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundStyle(.tertiary)
+                            }
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }
         }
         .cardStyle()
+        .sheet(item: Binding(
+            get: {
+                selectedCategoryName.map { name in
+                    CategoryExpensesSheet.CategorySelection(
+                        name: name,
+                        expenses: expenses.filter { ($0.category?.name ?? "Uncategorized") == name }
+                    )
+                }
+            },
+            set: { _ in selectedCategoryName = nil }
+        )) { selection in
+            CategoryExpensesSheet(selection: selection)
+        }
+    }
+}
+
+struct CategoryExpensesSheet: View {
+    struct CategorySelection: Identifiable {
+        let id = UUID()
+        let name: String
+        let expenses: [Expense]
+    }
+
+    let selection: CategorySelection
+
+    private var sortedExpenses: [Expense] {
+        selection.expenses.sorted { $0.date > $1.date }
+    }
+
+    private var total: Double {
+        selection.expenses.reduce(0) { $0 + $1.amount }
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    HStack {
+                        Text("Total")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text(total.formattedEUR)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
+                }
+
+                Section {
+                    ForEach(sortedExpenses) { expense in
+                        ExpenseRowView(expense: expense)
+                    }
+                }
+            }
+            .listStyle(.insetGrouped)
+            .navigationTitle(selection.name)
+            .navigationBarTitleDisplayMode(.inline)
+            .presentationDetents([.medium, .large])
+        }
     }
 }

@@ -48,6 +48,8 @@
 		AA000000000000000000126 /* BudgetCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000061 /* BudgetCategoryEntity.swift */; };
 		AA000000000000000000127 /* AppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000062 /* AppShortcuts.swift */; };
 		AA000000000000000000128 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000063 /* SharedModelContainer.swift */; };
+		AA000000000000000000129 /* PaymentTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000065 /* PaymentTemplate.swift */; };
+		AA00000000000000000012A /* ManageTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000066 /* ManageTemplatesView.swift */; };
 		AA000000000000000000200 /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002C /* BudgetAppTests.swift */; };
 		AA000000000000000000201 /* ExpenseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000025 /* ExpenseModelTests.swift */; };
 		AA000000000000000000202 /* MonthlyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000026 /* MonthlyBudgetTests.swift */; };
@@ -122,6 +124,8 @@
 		AA000000000000000000061 /* BudgetCategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoryEntity.swift; sourceTree = "<group>"; };
 		AA000000000000000000062 /* AppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcuts.swift; sourceTree = "<group>"; };
 		AA000000000000000000063 /* SharedModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModelContainer.swift; sourceTree = "<group>"; };
+		AA000000000000000000065 /* PaymentTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTemplate.swift; sourceTree = "<group>"; };
+		AA000000000000000000066 /* ManageTemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTemplatesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				AA000000000000000000019 /* Expense.swift */,
 				AA00000000000000000001A /* MonthlyBudget.swift */,
 				AA00000000000000000005A /* Category.swift */,
+				AA000000000000000000065 /* PaymentTemplate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				AA000000000000000000059 /* DataManagementView.swift */,
 				AA00000000000000000005C /* CategoryFormView.swift */,
 				AA00000000000000000005D /* ManageCategoriesView.swift */,
+				AA000000000000000000066 /* ManageTemplatesView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -444,6 +450,8 @@
 				AA000000000000000000126 /* BudgetCategoryEntity.swift in Sources */,
 				AA000000000000000000127 /* AppShortcuts.swift in Sources */,
 				AA000000000000000000128 /* SharedModelContainer.swift in Sources */,
+				AA000000000000000000129 /* PaymentTemplate.swift in Sources */,
+				AA00000000000000000012A /* ManageTemplatesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,8 @@ struct InsightsChartsView: View {
     let allExpenses: [Expense]
     let currentMonth: Date
 
+    @State private var selectedCategoryName: String? = nil
+
     private struct CategoryTotal: Identifiable {
         let id: String
         let name: String
@@ -65,23 +67,44 @@ struct InsightsChartsView: View {
 
                         VStack(alignment: .leading, spacing: 8) {
                             ForEach(categoryTotals) { item in
-                                HStack(spacing: 8) {
-                                    Circle()
-                                        .fill(item.color)
-                                        .frame(width: 10, height: 10)
-                                    Text(item.name)
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                    Spacer()
-                                    Text(item.total.formattedEUR)
-                                        .font(.subheadline)
-                                        .fontWeight(.medium)
+                                Button {
+                                    selectedCategoryName = item.name
+                                } label: {
+                                    HStack(spacing: 8) {
+                                        Circle()
+                                            .fill(item.color)
+                                            .frame(width: 10, height: 10)
+                                        Text(item.name)
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                        Text(item.total.formattedEUR)
+                                            .font(.subheadline)
+                                            .fontWeight(.medium)
+                                        Image(systemName: "chevron.right")
+                                            .font(.caption)
+                                            .foregroundStyle(.tertiary)
+                                    }
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                     }
                 }
                 .cardStyle()
+                .sheet(item: Binding(
+                    get: {
+                        selectedCategoryName.map { name in
+                            CategoryExpensesSheet.CategorySelection(
+                                name: name,
+                                expenses: expenses.filter { ($0.category?.name ?? "Uncategorized") == name }
+                            )
+                        }
+                    },
+                    set: { _ in selectedCategoryName = nil }
+                )) { selection in
+                    CategoryExpensesSheet(selection: selection)
+                }
 
                 // Spending trend chart
                 SpendingTrendChart(expenses: expenses, currentMonth: currentMonth)
